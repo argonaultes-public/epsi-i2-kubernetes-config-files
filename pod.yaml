@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: todo-api-pod
+  name: todo-api-pod
+spec:
+  containers:
+  - image: gaelroustan/todo-api:2.0
+    name: todo-api-pod
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

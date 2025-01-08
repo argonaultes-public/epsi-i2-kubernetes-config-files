@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: todoapi-lb
+  labels:
+    app: todoapi
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 3002
+  selector:
+    run: todo-api-pod 
