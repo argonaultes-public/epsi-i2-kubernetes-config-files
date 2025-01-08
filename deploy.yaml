@@ -21,13 +21,9 @@ spec:
         app: todo-api-deploy
     spec:
       containers:
-      - image: gaelroustan/todo-api:2.0
+      - image: gaelroustan/todo-api:7.0
         name: todo-api
         ports:
         - containerPort: 3002
-        resources:
-          requests:
-            cpu: 100m
-          limits:
-            cpu: 250m
+        resources: {}
 status: {}
