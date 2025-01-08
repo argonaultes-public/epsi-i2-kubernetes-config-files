@@ -5,7 +5,7 @@ import { textSummary } from 'https://jslib.k6.io/k6-summary/0.0.2/index.js';
 
 
 export default function () {
-  const res = http.get('http://192.168.59.100:32458');
+  const res = http.get('http://10.100.190.191:3002');
   check(res, {
     'verify it works is displayed': (r) =>
       r.body.includes('it works'),

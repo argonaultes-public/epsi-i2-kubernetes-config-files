@@ -25,5 +25,9 @@ spec:
         name: todo-api
         ports:
         - containerPort: 3002
-        resources: {}
+        resources:
+          requests:
+            cpu: 100m
+          limits:
+            cpu: 250m
 status: {}
