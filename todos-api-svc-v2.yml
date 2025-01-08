@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: todos-api-svc-v2
+spec:
+  selector:
+    myenv: production
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 3002
+      targetPort: 3002

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: todos-api-pod
+    myenv: staging
+  name: todos-api-pod
+  namespace: default
+spec:
+  containers:
+  - image: localhost:5000/argonaultes-it-works:2025
+    imagePullPolicy: IfNotPresent
+    name: todos-api-pod
+    env:
+      - name: API_TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: api-token-secret
+            key: apitoken
+

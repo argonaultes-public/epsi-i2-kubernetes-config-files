@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-todos-api-v1
+  labels:
+    app: todo-api
+    env: production
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: todo-api
+  template:
+    metadata:
+      name: pod-template-api
+      labels:
+        app: todo-api
+    spec:
+      containers:
+        - name: ctner-tpl-api
+          image: localhost:5000/argonaultes-it-works:2025
+          ports:
+            - containerPort: 3002

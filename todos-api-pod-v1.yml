@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-todo-api-yml
+  labels:
+    app: todo-api-yml
+    myenv: production
+spec:
+  containers:
+    - name: todo-api-container
+      image: localhost:5000/argonaultes-it-works:2025
+      env:
+        - name: API_TOKEN
+          valueFrom:
+            configMapKeyRef:
+              name: todos-api-configmap-cli
+              key: TODO_API_TOKEN
+  restartPolicy: Never
